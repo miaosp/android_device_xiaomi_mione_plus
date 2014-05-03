@@ -4,19 +4,16 @@ PRODUCT_RELEASE_NAME := mione_plus
 
 TARGET_BOOTANIMATION_NAME := vertical-480x854
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 PRODUCT_PACKAGES += \
-    Firewall \
-    Focal
+    Firewall
 
 # Inherit device configuration
-$(call inherit-product, device/xiaomi/mione_plus/device_mione_plus.mk)
+$(call inherit-product, device/xiaomi/mione_plus/aosp_mione_plus.mk)
 
 # Setup device specific product configuration.
 PRODUCT_DEVICE := mione_plus
-PRODUCT_NAME := cm_mione_plus
+PRODUCT_NAME := full_mione_plus
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI-ONE Plus
 PRODUCT_MANUFACTURER := Xiaomi

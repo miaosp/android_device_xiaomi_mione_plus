@@ -1,8 +1,6 @@
 # patches needed to build a flashable ROM for xiaomi mione
 
 * `cm-11.0_softap.patch`: use softap in cm-11.0
-* `iproutes2.patch`: fix iproutes2 compilation
-* `no_selinux.patch`: we don't have selinux
 * `wext_combo_scan.patch`: use combo scan for wext wifi driver
 * `xiaomi_mione_camera.patch`: needed by mione's camera HAL
 * `xiaomi_mione_wifi.patch`: needed to make wifi working on all mione

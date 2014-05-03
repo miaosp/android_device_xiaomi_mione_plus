@@ -23,10 +23,19 @@ $(call inherit-product-if-exists, vendor/xiaomi/mione_plus/mione_plus-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/xiaomi/mione_plus/overlay
 
+#add superuser
+SUPERUSER_EMBEDDED := true
+
 # GPS and Light
 PRODUCT_PACKAGES += \
     gps.mione \
-    lights.mione
+    lights.mione \
+    Superuser \
+    su
+
+# Launcher3
+PRODUCT_PACKAGES += \
+    Launcher3
 
 # gps.conf
 PRODUCT_COPY_FILES += \
@@ -84,6 +93,23 @@ PRODUCT_COPY_FILES += $(shell \
     | sed -r 's/^\/?(.*\/)([^/ ]+)$$/\1\2:system\/lib\/modules\/\2/' \
     | tr '\n' ' ')
 endif
+
+#$(shell mkdir -p $(OUT)/target/common/obj/JAVA_LIBRARIES/android_webview_java_intermediates)
+
+#add prebuilt webviewchromium
+PRODUCT_COPY_FILES += \
+    device/xiaomi/mione_plus/prebuilt/webviewchromium.jar:system/framework/webviewchromium.jar \
+    device/xiaomi/mione_plus/prebuilt/libwebviewchromium.so:system/lib/libwebviewchromium.so  \
+    device/xiaomi/mione_plus/prebuilt/libwebviewchromium_plat_support.so:system/lib/libwebviewchromium_plat_support.so  \
+    device/xiaomi/mione_plus/prebuilt/symbols/libwebviewchromium.so:symbols/system/lib/libwebviewchromium.so \
+    device/xiaomi/mione_plus/prebuilt/symbols/libwebviewchromium_plat_support.so:symbols/system/lib/libwebviewchromium_plat_support.so
+
+    
+
+src_files := $(shell ls $(LOCAL_PATH)/prebuilt/webview/paks )
+PRODUCT_COPY_FILES += $(foreach file, $(src_files), \
+        $(LOCAL_PATH)/prebuilt/webview/paks/$(file):system/framework/webview/paks/$(file))
+        
 
 # Permissions
 PRODUCT_COPY_FILES += \
