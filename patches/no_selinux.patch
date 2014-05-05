@@ -13,18 +13,16 @@ index 33c9918..11e02ae 100644
      file_contexts \
      seapp_contexts \
 
-project vendor/cm/
-diff --git a/vendor/cm/config/common.mk b/vendor/cm/config/common.mk
-index b83b994..04428b2 100644
---- a/vendor/cm/config/common.mk
-+++ b/vendor/cm/config/common.mk
-@@ -63,9 +63,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
-     ro.com.android.dateformat=MM-dd-yyyy \
-     ro.com.android.dataroaming=false
+project vendor/liquid/
+diff --git a/vendor/liquid/config/common.mk b/vendor/liquid/config/common.mk
+index 7a3bb48..0131afb 100644
+--- a/vendor/liquid/config/common.mk
++++ b/vendor/liquid/config/common.mk
+@@ -15,7 +15,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
  
--PRODUCT_PROPERTY_OVERRIDES += \
--    ro.build.selinux=1
--
- # Thank you, please drive thru!
- PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
+ # properties
+ PRODUCT_PROPERTY_OVERRIDES += \
+-    ro.build.selinux=1 \
+     persist.sys.root_access=3
  
+ # Tether for all
