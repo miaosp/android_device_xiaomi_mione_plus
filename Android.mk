@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Hack for build audio-caf 
+# Hack for build audio-caf
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr/include)
 
 LOCAL_PATH := $(call my-dir)

@@ -79,11 +79,11 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 384000
 
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
-    oneshot
+    late_start
     disabled
 
 service fuse_usbdisk0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbdisk0 /storage/usbdisk0
-    oneshot
+    late_start
     disabled
 
 on charger
