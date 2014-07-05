@@ -15,5 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_mione_plus.mk \
     $(LOCAL_DIR)/full_mione_plus.mk
